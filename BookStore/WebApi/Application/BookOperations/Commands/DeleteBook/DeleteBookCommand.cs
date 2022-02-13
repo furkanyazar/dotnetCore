@@ -2,12 +2,13 @@ using System;
 using System.Linq;
 using WebApi.DbOperations;
 
-namespace WebApi.BookOperations.DeleteBook
+namespace WebApi.Application.BookOperations.Commands.DeleteBook
 {
     public class DeleteBookCommand
     {
-        private readonly BookStoreDbContext _context;
         public int BookId { get; set; }
+
+        private readonly BookStoreDbContext _context;
 
         public DeleteBookCommand(BookStoreDbContext context)
         {
