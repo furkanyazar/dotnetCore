@@ -1,0 +1,2 @@
+# dotnetCore
+.Net Core patikası
