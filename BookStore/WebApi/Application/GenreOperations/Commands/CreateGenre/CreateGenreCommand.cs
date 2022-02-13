@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using AutoMapper;
 using WebApi.DbOperations;
 using WebApi.Entities;
 
@@ -10,10 +11,12 @@ namespace WebApi.Application.GenreOperations.Commands.CreateGenre
         public CreateGenreModel Model { get; set; }
 
         private readonly BookStoreDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CreateGenreCommand(BookStoreDbContext context)
+        public CreateGenreCommand(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public void Handle()
@@ -23,7 +26,7 @@ namespace WebApi.Application.GenreOperations.Commands.CreateGenre
             if (genre is not null)
                 throw new InvalidOperationException("Kitap türü zaten mevcut");
 
-            genre = new Genre { Name = Model.Name };
+            genre = _mapper.Map<Genre>(Model);
 
             _context.Genres.Add(genre);
             _context.SaveChanges();
