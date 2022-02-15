@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using FluentValidation;
 using WebApi.DbOperations;
 
 namespace WebApi.Application.BookOperations.Commands.DeleteBook
@@ -8,9 +9,9 @@ namespace WebApi.Application.BookOperations.Commands.DeleteBook
     {
         public int BookId { get; set; }
 
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
-        public DeleteBookCommand(BookStoreDbContext context)
+        public DeleteBookCommand(IBookStoreDbContext context)
         {
             _context = context;
         }

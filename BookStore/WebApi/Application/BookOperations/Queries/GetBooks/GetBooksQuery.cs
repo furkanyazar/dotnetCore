@@ -8,10 +8,10 @@ namespace WebApi.Application.BookOperations.Queries.GetBooks
 {
     public class GetBooksQuery
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetBooksQuery(BookStoreDbContext context, IMapper mapper)
+        public GetBooksQuery(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -19,7 +19,7 @@ namespace WebApi.Application.BookOperations.Queries.GetBooks
 
         public List<BooksViewModel> Handle()
         {
-            var bookList = _context.Books.Include(b => b.Genre).OrderBy(b => b.Id).ToList();
+            var bookList = _context.Books.Include(b => b.Genre).Include(b => b.Author).OrderBy(b => b.Id).ToList();
 
             return _mapper.Map<List<BooksViewModel>>(bookList);
         }

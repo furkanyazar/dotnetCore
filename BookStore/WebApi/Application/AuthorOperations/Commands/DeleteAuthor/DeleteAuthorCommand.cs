@@ -8,9 +8,9 @@ namespace WebApi.Application.AuthorOperations.Commands.DeleteAuthor
     {
         public int AuthorId { get; set; }
 
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
-        public DeleteAuthorCommand(BookStoreDbContext context)
+        public DeleteAuthorCommand(IBookStoreDbContext context)
         {
             _context = context;
         }
@@ -19,12 +19,10 @@ namespace WebApi.Application.AuthorOperations.Commands.DeleteAuthor
         {
             var author = _context.Authors.SingleOrDefault(a => a.Id == AuthorId);
 
-            var books = _context.Books.Where(b => b.AuthorId == AuthorId);
-
             if (author is null)
                 throw new InvalidOperationException("Yazar bulunamadı");
             
-            if (books is not null)
+            if (_context.Books.Any(b => b.AuthorId == AuthorId))
                 throw new InvalidOperationException("Yazarın en az bir kitabı mevcut");
 
             _context.Authors.Remove(author);

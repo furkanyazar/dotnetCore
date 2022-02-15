@@ -6,12 +6,12 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
 {
     public class UpdateBookCommand
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
         public int BookId { get; set; }
         public UpdateBookModel Model { get; set; }
 
-        public UpdateBookCommand(BookStoreDbContext context)
+        public UpdateBookCommand(IBookStoreDbContext context)
         {
             _context = context;
         }
@@ -24,6 +24,7 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
                 throw new InvalidOperationException("Kitap bulunamadı");
 
             book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;
+            book.AuthorId = Model.AuthorId != default ? Model.AuthorId : book.AuthorId;
             book.Title = Model.Title != default ? Model.Title : book.Title;
 
             _context.SaveChanges();
@@ -34,5 +35,6 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
     {
         public string Title { get; set; }
         public int GenreId { get; set; }
+        public int AuthorId { get; set; }
     }
 }

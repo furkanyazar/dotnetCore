@@ -996,11 +996,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\furka\\Documents\\Git\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "c:\\Users\\furka\\Documents\\Git\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\furka\\Documents\\Git\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
+      "projectPath": "c:\\Users\\furka\\Documents\\Git\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\furka\\Documents\\Git\\Pratikler\\BookStore\\WebApi\\obj\\",
+      "outputPath": "c:\\Users\\furka\\Documents\\Git\\Pratikler\\BookStore\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\furka\\AppData\\Roaming\\NuGet\\NuGet.Config",

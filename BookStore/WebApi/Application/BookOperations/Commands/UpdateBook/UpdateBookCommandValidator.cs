@@ -8,6 +8,7 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
         {
             RuleFor(b => b.BookId).NotEmpty().GreaterThan(0);
             RuleFor(b => b.Model.GenreId).NotEmpty().GreaterThan(0);
+            RuleFor(b => b.Model.AuthorId).NotEmpty().GreaterThan(0);
             RuleFor(b => b.Model.Title).NotEmpty().MinimumLength(4);
         }
     }

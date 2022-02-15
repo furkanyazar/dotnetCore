@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "meAbOSSyCfe9moI10mRGwVfq8oCi6/QngdIxP5BiDVAyM6aGEMnPwED7kr2SEI4UEpuix48Yvr+e+OVFzZuwOQ==",
+  "dgSpecHash": "/EXv45KUn09BXfnXCy8fEfL4PnWOrHw1qhWPthalk77f6nOBYxAE//Gu0elMiXggN38T5vmpJwQiEjHNYNLS6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\furka\\Documents\\Git\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
+  "projectFilePath": "c:\\Users\\furka\\Documents\\Git\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\furka\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
