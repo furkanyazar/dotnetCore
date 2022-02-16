@@ -9,6 +9,7 @@ using WebApi.Application.GenreOperations.Queries.GetGenres;
 using WebApi.Entities;
 using WebApi.Application.GenreOperations.Commands.CreateGenre;
 using WebApi.Application.AuthorOperations.Commands.CreateAuthor;
+using WebApi.Application.UserOperations.Commands.CreateUser;
 
 namespace WebApi.Common
 {
@@ -36,6 +37,9 @@ namespace WebApi.Common
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.FirstName + " " + src.LastName));
             CreateMap<Author, AuthorDetailViewModel>()
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.FirstName + " " + src.LastName));
+
+            //User
+            CreateMap<CreateUserModel, User>();
         }
     }
 }
